@@ -6,7 +6,11 @@ namespace C_Sharp_homework_003
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Menu menu = new Menu();
+
+            menu.AddNewTask("", new SomeTask(() => { }));
+            //menu.AddNewTask("", new SomeTask(() => { }));
+            menu.Start();
         }
     }
 }
