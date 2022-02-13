@@ -30,7 +30,7 @@ namespace C_Sharp_homework_003
         {
             Menu menu = new Menu();
 
-            menu.AddNewTask("", new SomeTask(() =>
+            menu.AddNewTask("Student", new SomeTask(() =>
             {
                 List<Student> students = new List<Student>();
                 int choice;
@@ -75,6 +75,52 @@ namespace C_Sharp_homework_003
                         Console.WriteLine(exp.Message);
                     }
                 } while (true);
+            }));
+
+            menu.AddNewTask("Circle", new SomeTask(() =>
+            {
+                Circle circle = Circle.CreateCircle();
+                int choice;
+                do
+                {
+                    string info = circle.ToString();
+                    Console.WriteLine(new string('=', info.Length + 2));
+                    Console.WriteLine("|" + circle + "|");
+                    Console.WriteLine(new string('=', info.Length + 2));
+                    Console.WriteLine("0. Вихід");
+                    Console.WriteLine("1. Перестворити коло");
+                    Console.WriteLine("2. Отримати площу");
+                    Console.WriteLine("3. Довжина окружності");
+                    Console.WriteLine("4. Перевірити чи точка є у колі");
+                    choice = Convert.ToInt32(Console.ReadLine());
+                    if (choice == 0)
+                        break;
+
+                    switch (choice)
+                    {
+                        case 1:
+                            circle = Circle.CreateCircle();
+                            break;
+                        case 2:
+                            Console.WriteLine($"Площа: {circle.GetCircleArea()}");
+                            break;
+                        case 3:
+                            Console.WriteLine($"Довжина окружності: {circle.GetCircumference()}");
+                            break;
+                        case 4:
+                            int x, y;
+                            Console.WriteLine("Уведи X: ");
+                            x = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Уведи Y: ");
+                            y = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Ця точка " + (circle.IsInCircle(x, y) ? "" : "не ") + "є частиною кола");
+                            break;
+                    }
+
+                } while (true);
+
+
+
             }));
             //menu.AddNewTask("", new SomeTask(() => { }));
             menu.Start();
