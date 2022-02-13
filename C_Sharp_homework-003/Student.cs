@@ -176,10 +176,10 @@ namespace C_Sharp_homework_003
 
         public override string ToString()
         {
-            StringBuilder grades_string = new StringBuilder();
+            StringBuilder gradesString = new StringBuilder();
             for (int i = 0; i < subjects.Length; i++)
-                grades_string.Append($"{subjects[i]}: {string.Join(", ", grades[i])}\n");
-            return $"{group}: {name} {surname} {patronymic}\n{grades_string}";
+                gradesString.Append($"{subjects[i]}: {string.Join(", ", grades[i])}\n");
+            return $"{group}: {name} {surname} {patronymic}\n{gradesString}";
 
         }
 

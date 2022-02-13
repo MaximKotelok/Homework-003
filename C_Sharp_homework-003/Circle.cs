@@ -9,14 +9,14 @@ namespace C_Sharp_homework_003
     class Circle
     {
         private double radius;
-        private int center_x, center_y;
+        private int centerX, centerY;
 
         public Circle() : this(0, 0, 0) { }
-        public Circle(double radius, int center_x, int center_y)
+        public Circle(double radius, int centerX, int centerY)
         {
             this.radius = radius;
-            this.center_x = center_x;
-            this.center_y = center_y;
+            this.centerX = centerX;
+            this.centerY = centerY;
         }
 
         public double GetCircleArea()
@@ -31,12 +31,12 @@ namespace C_Sharp_homework_003
 
         public bool IsInCircle(int x, int y)
         {
-            return Math.Pow((x - center_x), 2) + Math.Pow((y - center_y), 2) < Math.Pow(radius, 2);
+            return Math.Pow((x - centerX), 2) + Math.Pow((y - centerY), 2) < Math.Pow(radius, 2);
         }
 
         public override string ToString()
         {
-            return $"Коло: x = {center_x}, y = {center_y} | R = {radius}";
+            return $"Коло: x = {centerX}, y = {centerY} | R = {radius}";
         }
 
         public static Circle CreateCircle()

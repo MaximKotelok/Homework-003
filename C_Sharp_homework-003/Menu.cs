@@ -19,7 +19,7 @@ namespace C_Sharp_homework_003
         {
 
             private string description;
-            ConsoleColor border_color;
+            ConsoleColor borderColor;
             string border;
             SomeTask task;
 
@@ -41,10 +41,10 @@ namespace C_Sharp_homework_003
             {
                 task.Invoke();
             }
-            public void AddBorder(string text, ConsoleColor border_color)
+            public void AddBorder(string text, ConsoleColor borderColor)
             {
                 this.border = text;
-                this.border_color = border_color;
+                this.borderColor = borderColor;
             }
 
             public void PrintBorder()
@@ -52,7 +52,7 @@ namespace C_Sharp_homework_003
                 if (border.Length != 0)
                 {
 
-                    Console.ForegroundColor = border_color;
+                    Console.ForegroundColor = borderColor;
                     Console.WriteLine($"*-=-=- {border} -=-=-*");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
